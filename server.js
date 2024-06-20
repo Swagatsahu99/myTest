@@ -27,4 +27,10 @@ server.listen(process.env.PORT || 3000,()=>{
 io.on('connection',(socket)=>{
     socket.emit("welcome",socket.id);
     console.log(socket.id);
+    const data={
+        name:"Swagat",
+        pwd:"123",
+        age:"22"
+    }
+    socket.emit("userData",data);
 })
